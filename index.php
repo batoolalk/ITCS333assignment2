@@ -26,24 +26,53 @@ if ($result === NULL) {
     <title>UOB Student Nationality Data</title>
     <link rel="stylesheet" href="https://unpkg.com/picocss@1.5.0/dist/pico.min.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f9f9f9; /* Optional light background */
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+        }
         .responsive-table {
-            width: 100%;
+            width: 90%;
+            max-width: 1200px; /* Restrict maximum table width */
+            margin: 0 auto;
             border-collapse: collapse;
-            overflow-x: auto;
-            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+            background-color: #fff; /* White table background */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden;
+            font-size: 0.85em;
+        }
+        .responsive-table thead {
+            background-color: #f8f9fa;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid #dee2e6;
         }
         .responsive-table th, .responsive-table td {
-            padding: 8px;
-            text-align: left;
+            padding: 12px 20px;
+            border-bottom: 1px solid #dee2e6;
         }
-        .responsive-table th {
-            font-weight: bold;
+        .responsive-table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
         }
-        @media screen and (max-width: 600px) {
-            .responsive-table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
+        .responsive-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .responsive-table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+        @media screen and (max-width: 768px) {
+            .responsive-table th, .responsive-table td {
+                padding: 10px;
             }
         }
     </style>
@@ -76,7 +105,7 @@ if ($result === NULL) {
                     echo '</tr>';
                 }
             } else {
-                echo '<tr><td colspan="4">No data available</td></tr>';
+                echo '<tr><td colspan="6">No data available</td></tr>';
             }
             ?>
         </tbody>
