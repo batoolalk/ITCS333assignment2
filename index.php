@@ -54,10 +54,12 @@ if ($result === NULL) {
     <table class="responsive-table">
         <thead>
             <tr>
+                <th>Year</th>
+                <th>Semester</th>
+                <th>The Programs</th>
                 <th>Nationality</th>
+                <th>Colleges</th>
                 <th>Number of Students</th>
-                <th>College</th>
-                <th>Program</th>
             </tr>
         </thead>
         <tbody>
@@ -66,10 +68,12 @@ if ($result === NULL) {
             if (isset($result['results']) && is_array($result['results'])) {
                 foreach ($result['results'] as $record) {
                     echo '<tr>';
-                    echo '<td>' . htmlspecialchars($record['nationality'] ?? 'N/A') . '</td>';
-                    echo '<td>' . htmlspecialchars($record['number_of_students'] ?? 'N/A') . '</td>';
-                    echo '<td>' . htmlspecialchars($record['colleges'] ?? 'N/A') . '</td>';
+                    echo '<td>' . htmlspecialchars($record['year'] ?? 'N/A') . '</td>';
+                    echo '<td>' . htmlspecialchars($record['semester'] ?? 'N/A') . '</td>';
                     echo '<td>' . htmlspecialchars($record['the_programs'] ?? 'N/A') . '</td>';
+                    echo '<td>' . htmlspecialchars($record['nationality'] ?? 'N/A') . '</td>';
+                    echo '<td>' . htmlspecialchars($record['colleges'] ?? 'N/A') . '</td>';
+                    echo '<td>' . htmlspecialchars($record['number_of_students'] ?? 'N/A') . '</td>';
                     echo '</tr>';
                 }
             } else {
