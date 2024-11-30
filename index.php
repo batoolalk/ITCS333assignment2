@@ -33,12 +33,11 @@ if ($result === NULL) {
             display: block;
         }
         .responsive-table th, .responsive-table td {
-            border: 1px solid #ccc;
             padding: 8px;
             text-align: left;
         }
         .responsive-table th {
-            background-color: #f4f4f4;
+            font-weight: bold;
         }
         @media screen and (max-width: 600px) {
             .responsive-table {
